@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Simple from './layouts/simple';
-import Dashboard from './layouts/dashboard';
 
 import Home from './pages/home';
 import Checkout from './pages/checkout';
@@ -29,7 +28,7 @@ export default function Routes(){
           exact 
           path="/" 
           component={Home} 
-          layout={Dashboard} />
+          layout={Simple} />
         <AppRoute 
           path="/checkout" 
           component={Checkout} 
