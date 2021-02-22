@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { cpfMask } from '../utils/cpfMask'
+
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card';
@@ -39,35 +41,39 @@ export default function ModalCheckout(props){
       ...form,
       [name]: value
     });
+  }
 
-    console.log(form)
+  const inputCPF = e => {
+    setForm({...form, cpf: cpfMask(e.target.value)})
   }
 
   return(
     <Modal
       className={classes.modal}
       open={props.open}
-      onClose={() => props.modalClose()}>
+      onClose={() => props.modalOpen()}>
       {
         <Card className={classes.card}>
           <CardHeader
             title="VAMOS CONCLUIR A COMPRA?"
             subheader="Insira seus dados para que possamos te identificar..."/>
           <CardContent>
-            <form>
+            <form onSubmit={() => props.modalConfirm(form)}>
               <Box display="flex" flexDirection="column">
                 <TextField
                   className={classes.textField}
                   name="name"
                   label="Nome"
                   value={form.name}
-                  onChange={handleInputChange}  />
+                  required
+                  onChange={handleInputChange} />
                 <TextField
                   className={classes.textField}
                   name="cpf"
                   label="CPF"
                   value={form.cpf}
-                  onChange={handleInputChange} />
+                  required
+                  onChange={inputCPF} />
                 <Button
                   type="submit"
                   className={classes.button}

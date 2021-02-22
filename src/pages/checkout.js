@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import Card from '@material-ui/core/Card';
@@ -11,9 +11,12 @@ import Button from '@material-ui/core/Button';
 
 import ItemCheckout from '../components/itemCheckout';
 import ActionCheckout from '../components/actionCheckout';
+import ModalCheckout from '../components/modalCheckout';
 
 import { selectProductsCheckout } from '../store/checkout/checkoutSelectors';
-import ModalCheckout from '../components/modalCheckout';
+import { selectTotalPrice } from '../store/checkout/checkoutSelectors';
+import { addShopping } from '../store/shoppings/shoppingsActions';
+import { resetCheckout } from '../store/checkout/checkoutActions';
 
 
 const useStyles = makeStyles((themes) => ({
@@ -32,16 +35,29 @@ const useStyles = makeStyles((themes) => ({
 export default function Checkout(){
   const classes = useStyles(); 
   const history = useHistory();
+  const dispatch = useDispatch();
+
   const cartItems = useSelector(selectProductsCheckout);
+  const totalPrice = useSelector(selectTotalPrice);
 
   const [open, setOpen] = useState(false);
 
   const modalOpen = () => {
-    setOpen(true);
+    setOpen(!open);
   };
 
-  const modalClose = () => {
-    setOpen(false);
+  const modalConfirm = (form) => {
+    const shopping = {
+      name: form.name,
+      cpf: form.cpf,
+      totalPrice: totalPrice,
+      items: cartItems
+    };
+
+    dispatch(addShopping(shopping));
+    dispatch(resetCheckout());
+
+    history.push('/shoppings');
   };
 
   if(cartItems.length){
@@ -55,7 +71,7 @@ export default function Checkout(){
             <ActionCheckout modalOpen={modalOpen}/>
           </CardContent>
         </Card>
-        <ModalCheckout modalClose={modalClose} open={open}/>
+        <ModalCheckout modalConfirm={modalConfirm} modalOpen={modalOpen} open={open}/>
       </div>
     );
   }else{

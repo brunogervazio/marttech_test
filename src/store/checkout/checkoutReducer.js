@@ -30,6 +30,10 @@ export default function checkoutReducer(state = [], action){
           return item.id !== action.payload
         });
       }
+    case 'RESET_CHECKOUT':
+      {
+        return []
+      }
     default:
       return state
   }

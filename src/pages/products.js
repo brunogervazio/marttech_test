@@ -21,7 +21,11 @@ export default function Products(){
     <Grid container>
       {
       items.map((item)=>
-        <Grid item lg={3} md={4} sm={6} xs={12} className={classes.item} key={item.id}>
+        <Grid
+          item
+          lg={3} md={4} sm={6} xs={12}
+          className={classes.item}
+          key={item.id}>
           <CardItem data={item} />
         </Grid>
       )}

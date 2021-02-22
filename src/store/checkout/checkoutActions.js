@@ -22,3 +22,8 @@ export function removeItem(id){
     payload: id
   }
 }
+export function resetCheckout(){
+  return {
+    type: 'RESET_CHECKOUT',
+  }
+}
