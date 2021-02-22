@@ -1,0 +1,64 @@
+    
+
+[
+  {
+    "id": 1,
+    "description": "Fritadeira Elétrica sem Óleo/Air Fryer Nell Smart - Preta 2,4L com Timer",
+    "photo": "https://a-static.mlcdn.com.br/618x463/fritadeira-eletrica-sem-oleo-air-fryer-nell-smart-preta-24l-com-timer/magazineluiza/222478900/1fad2079a4468ecafb1ad7e0afec2c74.jpg",
+    "price": 229.90
+  },
+  {
+    "id": 2,
+    "description": "Jogo de Panelas Tramontina Antiaderente - de Alumínio Vermelho 5 Peças Paris",
+    "photo": "https://a-static.mlcdn.com.br/618x463/jogo-de-panelas-tramontina-antiaderente-de-aluminio-vermelho-5-pecas-paris/magazineluiza/226980100/2d091b7fa07bfce6ee1e7f3e7beb2e13.jpg",
+    "price": 237.41
+  },
+  {
+    "id": 3,
+    "description": "Geladeira Brastemp Frost Free Duplex Evox - 375 litros BRM45 HKBNA",
+    "photo": "https://a-static.mlcdn.com.br/618x463/geladeira-brastemp-frost-free-duplex-evox-375-litros-brm45-hkbna/magazineluiza/218891800/17a99b712fc04680ddf4b55398c1794c.jpg",
+    "price": 2698
+  },
+  {
+    "id": 4,
+    "description": "Cooktop 4 Bocas Continental a Gás GLP Preto - KC4GP",
+    "photo": "https://a-static.mlcdn.com.br/618x463/cooktop-4-bocas-continental-a-gas-glp-preto-kc4gp/magazineluiza/225420900/519e6fa64bff96cce3bb3e8a2dd33571.jpg",
+    "price": 427.41
+  },
+  {
+    "id": 5,
+    "description": "Lava e Seca Smart LG 11kg VC4 CV5011TS4A Motor - Inverter Inteligência Artificial AIDDTM",
+    "photo": "https://a-static.mlcdn.com.br/618x463/lava-e-seca-smart-lg-11kg-vc4-cv5011ts4a-motor-inverter-inteligencia-artificial-aiddtm/magazineluiza/221965900/fa4f2e3a2a57f3823523b6b1617a43ad.jpg",
+    "price": 3799.05
+  },
+  {
+    "id": 6,
+    "description": "Controle para PS4 Sem Fio Dualshock 4 Sony - Preto",
+    "photo": "https://a-static.mlcdn.com.br/618x463/controle-para-ps4-sem-fio-dualshock-4-sony-preto/magazineluiza/043179500/335834b5fb0892a78b9e827251a75414.jpg",
+    "price": 299
+  },
+  {
+    "id": 7,
+    "description": "Tablet Multilaser M7 3G Plus Dual Chip Quad Core 1GB 16GB Tela 7 Pol Preto Nb304",
+    "photo": "https://a-static.mlcdn.com.br/618x463/tablet-multilaser-m7-3g-plus-dual-chip-quad-core-1gb-16gb-tela-7-pol-preto-nb304/mmplace2/10392/377ecaebb758c6a1c1743482c937efbd.jpg",
+    "price": 549.90
+  },
+  {
+    "id": 8,
+    "description": "Kindle 10ª Geração Tela 6” 8GB Wi-Fi Luz Embutida - Preto",
+    "photo": "https://a-static.mlcdn.com.br/618x463/kindle-10a-geracao-tela-6-8gb-wi-fi-luz-embutida-preto/magazineluiza/225542900/7ec51beb6ca3c75cfca514bdd2c60a6f.jpg",
+    "price": 377.10
+  },
+  {
+    "id": 9,
+    "description": "Cadeira Gamer XT Racer Reclinável - Preto e Vermelha Speed Series XTS140",
+    "photo": "https://a-static.mlcdn.com.br/618x463/cadeira-gamer-xt-racer-reclinavel-preto-e-vermelha-speed-series-xts140/magazineluiza/225393400/f62ea5155159cd8cb86f37ad701a65b5.jpg",
+    "price": 949.91
+  },
+  {
+    "id": 10,
+    "description": "Combo com 4 Jogos para PS4 - Sony",
+    "photo": "https://a-static.mlcdn.com.br/618x463/combo-com-4-jogos-para-ps4-sony/magazineluiza/229253400/ec3ae7380fd5c5c67a7c4af1a1ea0753.jpg",
+    "price": 282.91
+  }
+]

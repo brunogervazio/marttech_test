@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Simple from './layouts/simple';
+import AppBar from './layouts/appBar';
 
-import Home from './pages/home';
 import Checkout from './pages/checkout';
 import Products from './pages/products';
+import Shoppings from './pages/shoppings';
 
 function AppRoute({component: Component, layout: Layout, ...rest}){
   return(
@@ -27,16 +27,20 @@ export default function Routes(){
         <AppRoute
           exact 
           path="/" 
-          component={Home} 
-          layout={Simple} />
-        <AppRoute 
-          path="/checkout" 
-          component={Checkout} 
-          layout={Simple} />
+          component={Products} 
+          layout={AppBar} />
         <AppRoute
           path="/products" 
           component={Products} 
-          layout={Simple} />
+          layout={AppBar} />
+        <AppRoute 
+          path="/checkout" 
+          component={Checkout} 
+          layout={AppBar} />
+        <AppRoute 
+          path="/shoppings" 
+          component={Shoppings} 
+          layout={AppBar} />
       </Switch>
     </BrowserRouter>
   )
