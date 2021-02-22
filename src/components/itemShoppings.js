@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { cpfMask } from '../utils/cpfMask';
-
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -37,7 +35,7 @@ export default function ItemShoppings(props){
             {props.shopping.name}
           </Typography>
           <Typography variant="body2">
-            <span className={classes.label}>CPF</span> {cpfMask(props.shopping.cpf)}
+            <span className={classes.label}>CPF</span> {props.shopping.cpf}
           </Typography>
           <Typography variant="body2">
             <span className={classes.label}>VALOR TOTAL</span> {props.shopping.totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}

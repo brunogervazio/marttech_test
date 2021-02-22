@@ -1,16 +1,17 @@
-import React, {useEffect} from 'react';
+import React, { useState } from 'react';
 
 import { useSelector } from 'react-redux';
 
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField'
-import Typography from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-import ItemShoppings from '../components/itemShoppings'
+import ItemShoppings from '../components/itemShoppings';
 
-import { selectShoppings } from '../store/shoppings/shoppingsSelectors'
+import { selectShoppings } from '../store/shoppings/shoppingsSelectors';
+import { filterArray } from '../utils/filterArray';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -25,12 +26,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Shoppings(){
   const classes = useStyles();
-
+  
   const shoppings = useSelector(selectShoppings);
 
-  useEffect(() => {
-    console.log(shoppings);      
-  }, [shoppings])
+  const [search, setSearch] = useState('')
 
   if(shoppings.length){
     return(
@@ -39,14 +38,15 @@ export default function Shoppings(){
           id="search"
           className={classes.search}
           label="Pesquisar Cliente"
-          variant="outlined" />
+          variant="outlined"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)} />
         <Grid container>
           {
-            shoppings.map((item) => 
+            filterArray(shoppings, search, 'name').map((item) => 
               <Grid
                 item
-                md={4} sm={6} xs={12}
-                key={item.id}>
+                md={4} sm={6} xs={12}>
                 <ItemShoppings
                   shopping={item} />
               </Grid>
@@ -56,8 +56,15 @@ export default function Shoppings(){
     );
   }else{
     return(
-      <Box display="flex" justifyContent="center" alignItems="center" height="100%" flexDirection="column">
-        <Typography variant="h3" className={classes.title}>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="100%"
+        flexDirection="column">
+        <Typography
+          variant="h3"
+          className={classes.title}>
           Não encontramos nehuma compra :(
         </Typography>
       </Box>
