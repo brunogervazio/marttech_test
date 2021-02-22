@@ -11,6 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ItemShoppings from '../components/itemShoppings';
 
 import { selectShoppings } from '../store/shoppings/shoppingsSelectors';
+
 import { filterArray } from '../utils/filterArray';
 
 const useStyles = makeStyles((theme) => ({
@@ -36,6 +37,7 @@ export default function Shoppings(){
       <div>
         <TextField
           id="search"
+          color="secondary"
           className={classes.search}
           label="Pesquisar Cliente"
           variant="outlined"

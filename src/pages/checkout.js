@@ -42,9 +42,7 @@ export default function Checkout(){
 
   const [open, setOpen] = useState(false);
 
-  const modalOpen = () => {
-    setOpen(!open);
-  };
+  const modalOpen = () => setOpen(!open);
 
   const modalConfirm = (form) => {
     const shopping = {
@@ -71,7 +69,10 @@ export default function Checkout(){
             <ActionCheckout modalOpen={modalOpen}/>
           </CardContent>
         </Card>
-        <ModalCheckout modalConfirm={modalConfirm} modalOpen={modalOpen} open={open}/>
+        <ModalCheckout
+          modalConfirm={modalConfirm}
+          modalOpen={modalOpen}
+          open={open}/>
       </div>
     );
   }else{

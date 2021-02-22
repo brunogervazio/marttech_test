@@ -59,7 +59,7 @@ export default function ItemCheckout(props){
           </Typography>
         </Grid>
       </Grid>
-      <Divider className={classes.divider}/>
+      <Divider />
     </div>
   );
 }

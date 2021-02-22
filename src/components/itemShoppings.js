@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Box from '@material-ui/core/Box'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
+
+import ModalPurchasedItems from '../components/modalPurchasedItems';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -15,7 +17,8 @@ const useStyles = makeStyles((themes) => ({
     padding: `${themes.spacing(1)}px`
   },
   name: {
-    color: themes.palette.primary.main
+    color: themes.palette.primary.main,
+    textTransform: 'uppercase'
   },
   label: {
     color: themes.palette.secondary.main
@@ -24,6 +27,9 @@ const useStyles = makeStyles((themes) => ({
 
 export default function ItemShoppings(props){
   const classes = useStyles();
+
+  const [open, setOpen] = useState(false);
+  const modalOpen = () => setOpen(!open)
 
   return(
     <div className={classes.root}>
@@ -41,12 +47,15 @@ export default function ItemShoppings(props){
             <span className={classes.label}>VALOR TOTAL</span> {props.shopping.totalPrice.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
           </Typography>
           <Box display="flex" justifyContent="flex-end">
-            <IconButton>
+            <IconButton 
+              onClick={() => modalOpen()}>
               <ListAltIcon />
             </IconButton>
           </Box>
         </CardContent>
       </Card>
+      
+      <ModalPurchasedItems open={open} modalOpen={modalOpen} items={props.shopping.items} totalPrice={props.shopping.totalPrice}/>
     </div>
   );
 };
