@@ -10,8 +10,6 @@ import Badge from '@material-ui/core/Badge'
 import Button from '@material-ui/core/Button'
 import Box from '@material-ui/core/Box'
 
-import Logo from '../assets/images/logo.png'
-
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
 
 import {selectProductsCheckout} from '../store/checkout/checkoutSelectors'
@@ -51,7 +49,6 @@ export default function TopBar(){
   return (
     <AppBar className={classes.root} color='inherit'>
       <Toolbar className={classes.toolbar}>
-        <img src={Logo} className={classes.logo}  alt="Logo"/>
         <Box marginLeft={3}>
           <Button color="primary" onClick={() => history.push("/products")}>Produtos</Button>
           <Button color="primary" onClick={() => history.push("/shoppings")}>Pedidos</Button>
